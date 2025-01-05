@@ -203,7 +203,40 @@
                 <label for="comments">Enter Your Opinion:</label>
                 <textarea id="comments" name="COMMENTS"></textarea>
             </div>
-            <input type="submit" value="Submit Feedback">
+             <style>
+        /* Button styling */
+        .button-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #4CAF50; /* Green background */
+            color: white; /* White text */
+            text-align: center;
+            text-decoration: none; /* Remove underline */
+            font-size: 16px;
+            border-radius: 5px; /* Rounded corners */
+            border: none;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        /* Hover effect */
+        .button-link:hover {
+            background-color: #45a049; /* Darker green when hovered */
+        }
+
+        /* Focus effect */
+        .button-link:focus {
+            outline: none; /* Remove default outline */
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Add custom focus effect */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Anchor tag styled as a button -->
+    <a href="index.html" class="button-link">Submit Feedback</a>
+
+            
+
         </form>
 
         <div id="response"></div>
