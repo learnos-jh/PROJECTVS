@@ -199,49 +199,48 @@
                 </select>
             </div>
 
-            <!-- <div class="form-group">
-                <label for="comments">Enter Your Opinion:</label>
-                <textarea id="comments" name="COMMENTS"></textarea>
-            </div> -->
+            <div class="form-group">
+                <label for="feedback">Enter Your opinion about site:</label>
+                <textarea id="feedback" name="feedback" required></textarea>
+            </div>
 
-            <form onsubmit="return handleSubmit();">
-                <input type="text" name="feedback" placeholder="Enter your feedback" required>
-                <input type="submit" value="Submit Feedback">
-              </form>
-              
-              <script>
-                function handleSubmit() {
-                  // Form submission ke baad home page par redirect karein
-                  window.location.href = "index.html"; // yahan "homepage.html" ko apne home page ke URL se replace karein
-                  return false; // ye form ke default submit behavior ko rokne ke liye
-                }
-              </script>
+            <input type="submit" value="Submit Feedback">
         </form>
 
         <div id="response"></div>
     </div>
 
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxmsQQl-H6PcbHY5fUbcFGx46sCqKDN3EmaM13KECQiyEBGQ1OtAEnMKSpPzNhsBalo/exec'
-        const form = document.forms['submit-to-google-sheet']
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxmsQQl-H6PcbHY5fUbcFGx46sCqKDN3EmaM13KECQiyEBGQ1OtAEnMKSpPzNhsBalo/exec';
+        const form = document.forms['submit-to-google-sheet'];
 
         form.addEventListener('submit', e => {
-            e.preventDefault()
+            e.preventDefault();
+
+            // Submit data to Google Sheets
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
+                    // Show success message
                     document.getElementById('response').textContent = 'Feedback submitted successfully!';
                     document.getElementById('response').className = 'success';
                     document.getElementById('response').style.display = 'block';
                     document.getElementById('response').style.opacity = '1';
+                    
+                    // Redirect to homepage after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = "index.html"; // Replace with your homepage URL
+                    }, 2000);
+
                     form.reset();
                 })
                 .catch(error => {
+                    // Show error message
                     document.getElementById('response').textContent = 'Error submitting feedback. Please try again.';
                     document.getElementById('response').className = 'error';
                     document.getElementById('response').style.display = 'block';
                     document.getElementById('response').style.opacity = '1';
-                })
-        })
+                });
+        });
     </script>
 </body>
 </html>
