@@ -4,166 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            
+            font-family: 'Poppins', sans-serif;
+            background-color: #f7f9fc;
+            margin-top: 100px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            transition: background-color 0.3s ease;
         }
+
         .container {
-            max-width: 600px;
-            margin: auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 700px;
+            background-color: #cec0c9;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        .container:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+        }
+
         h1 {
             text-align: center;
-            color: #333;
+            color: #4CAF50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
+
+        h1:hover {
+            color: #45a049;
+        }
+
         form {
             display: flex;
             flex-direction: column;
         }
+
         label {
-            margin-top: 10px;
-            font-weight: bold;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+            transition: color 0.3s ease;
         }
+
         input[type="text"],
         input[type="email"],
         select,
         textarea {
             width: 100%;
-            padding: 8px;
-            margin-top: 5px;
+            padding: 12px;
+            margin: 8px 0 20px 0;
             border: 1px solid #ddd;
-            border-radius: 4px;
+            border-radius: 6px;
             box-sizing: border-box;
+            font-size: 1rem;
+            color: #333;
+            transition: all 0.3s ease;
         }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+        }
+
         textarea {
-            height: 100px;
+            height: 120px;
+            resize: vertical;
         }
+
         input[type="submit"] {
             background-color: #4CAF50;
             color: white;
             padding: 12px 20px;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
             cursor: pointer;
-            margin-top: 20px;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
+
         input[type="submit"]:hover {
             background-color: #45a049;
+            transform: translateY(-3px);
         }
+
+        input[type="submit"]:active {
+            background-color: #388e3c;
+            transform: translateY(0);
+        }
+
         #response {
             margin-top: 20px;
-            padding: 10px;
-            border-radius: 4px;
+            padding: 12px;
+            border-radius: 6px;
             display: none;
+            font-size: 1rem;
+            text-align: center;
+            transition: opacity 0.3s ease;
         }
+
         .success {
             background-color: #d4edda;
             color: #155724;
         }
+
         .error {
             background-color: #f8d7da;
             color: #721c24;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group select,
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group textarea {
+            margin-bottom: 16px;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            animation: fadeIn 1s ease-out;
+        }
+
+        /* Hover effects for labels */
+        label:hover {
+            color: #4CAF50;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Educational Website Feedback</h1>
-        <form id="feedbackForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+        <h1>Feedback</h1>
+        <form id="submit-to-google-sheet">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="NAME" required>
+            </div>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="EMAIL" required>
+            </div>
 
-            <label for="rating">Overall Rating:</label>
-            <select id="rating" name="rating" required>
-                <option value="">Select a rating</option>
-                <option value="5">5 - Excellent</option>
-                <option value="4">4 - Very Good</option>
-                <option value="3">3 - Good</option>
-                <option value="2">2 - Fair</option>
-                <option value="1">1 - Poor</option>
-            </select>
+            <div class="form-group">
+                <label for="rating">Overall Rating:</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select a rating</option>
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+            </div>
 
-            <label for="usability">Usability:</label>
-            <select id="usability" name="usability" required>
-                <option value="">Select an option</option>
-                <option value="Excellent">Excellent</option>
-                <option value="Good">Good</option>
-                <option value="Average">Average</option>
-                <option value="Poor">Poor</option>
-            </select>
+            <div class="form-group">
+                <label for="content">Content Quality:</label>
+                <select id="content" name="content" required>
+                    <option value="">Select an option</option>
+                    <option value="Excellent">Excellent</option>
+                    <option value="Good">Good</option>
+                    <option value="Average">Average</option>
+                    <option value="Poor">Poor</option>
+                </select>
+            </div>
 
-            <label for="content">Content Quality:</label>
-            <select id="content" name="content" required>
-                <option value="">Select an option</option>
-                <option value="Excellent">Excellent</option>
-                <option value="Good">Good</option>
-                <option value="Average">Average</option>
-                <option value="Poor">Poor</option>
-            </select>
-
-            <label for="design">Design:</label>
-            <select id="design" name="design" required>
-                <option value="">Select an option</option>
-                <option value="Excellent">Excellent</option>
-                <option value="Good">Good</option>
-                <option value="Average">Average</option>
-                <option value="Poor">Poor</option>
-            </select>
-
-            <label for="comments">Additional Comments:</label>
-            <textarea id="comments" name="comments"></textarea>
+            <div class="form-group">
+                <label for="comments">Enter Your Opinion:</label>
+                <textarea id="comments" name="COMMENTS"></textarea>
+            </div>
 
             <input type="submit" value="Submit Feedback">
         </form>
+
         <div id="response"></div>
     </div>
 
     <script>
-        const form = document.getElementById('feedbackForm');
-        const responseDiv = document.getElementById('response');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxmsQQl-H6PcbHY5fUbcFGx46sCqKDN3EmaM13KECQiyEBGQ1OtAEnMKSpPzNhsBalo/exec'
+        const form = document.forms['submit-to-google-sheet']
 
         form.addEventListener('submit', e => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const data = Object.fromEntries(formData);
-
-            // Create CSV content
-            const headers = Object.keys(data);
-            const csvContent = [
-                headers.join(','),
-                Object.values(data).map(value => "${value}").join(',')
-            ].join('\n');
-
-            // Create Blob and download link
-            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
-            const link = document.createElement("a");
-            if (link.download !== undefined) {
-                const url = URL.createObjectURL(blob);
-                link.setAttribute("href", url);
-                link.setAttribute("download", "feedback_data.csv");
-                link.style.visibility = 'hidden';
-                document.body.appendChild(link);
-                link.click();
-                document.body.removeChild(link);
-            }
-
-            responseDiv.textContent = 'Thank you for your feedback!(Share the site link to your friend)';
-            responseDiv.className = 'success';
-            responseDiv.style.display = 'block';
-            form.reset();
-        });
+            e.preventDefault()
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    document.getElementById('response').textContent = 'Feedback submitted successfully!';
+                    document.getElementById('response').className = 'success';
+                    document.getElementById('response').style.display = 'block';
+                    document.getElementById('response').style.opacity = '1';
+                    form.reset();
+                })
+                .catch(error => {
+                    document.getElementById('response').textContent = 'Error submitting feedback. Please try again.';
+                    document.getElementById('response').className = 'error';
+                    document.getElementById('response').style.display = 'block';
+                    document.getElementById('response').style.opacity = '1';
+                })
+        })
     </script>
 </body>
 </html>
