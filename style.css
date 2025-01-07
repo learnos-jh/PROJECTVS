@@ -172,89 +172,217 @@ nav.active {
 }
 
 
-/* Adjusting the body content area */
-main {
-    margin-left: 250px; /* Add margin to body content to avoid overlap with sidebar */
-    padding: 20px;
-    gap: 20px;
-    align-items: center;
-    
-}
+    /* Body and General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
 
+    /* Main Content Area */
+    main {
+      margin-left: 250px; /* Add margin to body content to avoid overlap with sidebar */
+      padding: 20px;
+      gap: 20px;
+      align-items: center;
+    }
 
-.content-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 50px;
-    margin-top: 30px;
-}
+    .content-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 30px;
+    }
 
-.card {
-    width: 250px;
-    padding: 20px;
-    background: linear-gradient(145deg, #ffffff, #e6e6e6);
-    box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
-    border-radius: 15px;
-    position: relative;
-    overflow: hidden;
-    text-align: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    .card {
+      width: 250px;
+      padding: 20px;
+      background: linear-gradient(145deg, #ffffff, #e6e6e6);
+      box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      opacity: 0;
+      animation: slideIn 1s forwards;
+    }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 0px 20px 5px rgba(0, 123, 255, 0.6), inset 0px 0px 20px 5px rgba(0, 123, 255, 0.3);
-}
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 0px 20px 5px rgba(0, 123, 255, 0.6), inset 0px 0px 20px 5px rgba(0, 123, 255, 0.3);
+    }
 
-.card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-family: CREEPSTER-REGULAR;
-    color: fuchsia;
-}
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      font-family: 'Creepster-Regular';
+      color: fuchsia;
+    }
 
-.card p {
-    font-size: 1rem;
-    margin-bottom: 15px;
-    font-family: ArbutuSlab-Regular;
-}
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 15px;
+      font-family: 'ArbutuSlab-Regular';
+    }
 
-.card a {
-    text-decoration:underline;
-    color: #0066cc;
-    font-weight: 600;
-    font-family: RAYGUNrEGULAR;
-    font-size: 1.5rem;
-}
+    .card a {
+      text-decoration: underline;
+      color: #0066cc;
+      font-weight: 600;
+      font-family: 'Raygun-Regular';
+      font-size: 1.5rem;
+    }
 
-.card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 123, 255, 0.4), rgba(255, 255, 255, 0));
-    animation: shimmer 5s infinite;
-    z-index: 0;
-    opacity: 0.7;
-    pointer-events: none;
-}
+    .card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(0, 123, 255, 0.4), rgba(255, 255, 255, 0));
+      animation: shimmer 5s infinite;
+      z-index: 0;
+      opacity: 0.7;
+      pointer-events: none;
+    }
 
-.card:hover::before {
-    opacity: 1;
-}
+    .card:hover::before {
+      opacity: 1;
+    }
 
-@keyframes shimmer {
-    0% {
+    @keyframes shimmer {
+      0% {
         transform: rotate(0deg);
-    }
-    100% {
+      }
+      100% {
         transform: rotate(360deg);
+      }
     }
-}
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Footer styles */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004d99;
+      color: white;
+    }
+
+    footer .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    footer .social-icons a:hover {
+      color: #ffd700;
+    }
+
+    /* Dropdown Menu */
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #333;
+      min-width: 200px;
+      z-index: 1;
+      border-radius: 5px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown-content a {
+      color: white;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #575757;
+    }
+
+    /* Active Dropdown Display */
+    .dropdown .dropdown-content.active {
+      display: block;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Header Styling */
+    header {
+      background-color: #0066cc;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header .logo h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      font-size: 1rem;
+      padding: 10px 15px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      background-color: #003366;
+      border-radius: 5px;
+    }
+
+    nav ul li a.active {
+      background-color: #003366;
+    }
+
 
 /* Footer styles */
 footer {
