@@ -206,9 +206,7 @@ nav.active {
       overflow: hidden;
       text-align: center;
       cursor: pointer;
-      transition: transform 5.0s ease, box-shadow 5.0s ease;
-      opacity: 0;
-      animation: slideIn 1s forwards;
+     
     }
 
     .card:hover {
