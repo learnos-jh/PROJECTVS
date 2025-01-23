@@ -860,13 +860,13 @@ body {
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
-    background-color:#A1D1B1; /* Optional: Add a background color */
+/*     background-color:#A1D1B1; /* Optional: Add a background color */ */
     padding: 10px 0;
 }
 
 .marquee {
     display: inline-block;
-    animation: marquee 80s linear infinite;
+    animation: marquee 150s linear infinite;
 }
 
 .marquee span {
