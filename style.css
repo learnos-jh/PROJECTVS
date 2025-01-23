@@ -866,7 +866,7 @@ body {
 
 .marquee {
     display: inline-block;
-    animation: marquee 30s linear infinite;
+    animation: marquee 80s linear infinite;
 }
 
 .marquee span {
