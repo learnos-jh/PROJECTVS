@@ -932,16 +932,9 @@ body {
 
 /* College Section */
 .college-container {
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
     padding: 50px 20px;
-    color: white;
-}
-
-.college-container h3 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    background-color: #f4f4f4;
     text-align: center;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .college-cards {
@@ -952,74 +945,99 @@ body {
 }
 
 .college-card {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
+    background-color: white;
     padding: 20px;
-    width: calc(33% - 20px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.33% - 20px); /* Default 3 columns layout */
     transition: transform 0.3s ease;
-    color: #fff;  /* White text color */
+    text-align: center;
+    display: flex;
+    flex-direction: column; /* Allow content to stack inside the card */
+    justify-content: space-between;
 }
 
 .college-card:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.2);  /* Slightly brighter background on hover */
 }
 
 .college-card h4 {
-    font-size: 1.4rem;
-    color: #ffdd57;  /* Yellow color for the college name */
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-weight: bold;
 }
 
 .college-card p {
     font-size: 1rem;
-    color: #f0f0f0;  /* Light grey color for the description */
+    color: #555;
+    margin-bottom: 10px;
 }
 
-.btn-read-more {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 30px;
-    background: #ffdd57;
-    color: #2575fc;
+.college-card .btn-view {
+    margin-top: auto; /* Push button to the bottom of the card */
+    padding: 10px 20px;
+    background: #2575fc;
+    color: #fff;
+    text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
-    text-decoration: none;
+    text-align: center;
     transition: background 0.3s ease;
-    margin-left: 50%;
-    transform: translateX(-50%); /* Center the button */
 }
 
-.btn-read-more:hover {
-    background: #ff9900;
+.college-card .btn-view:hover {
+    background: #003366;
 }
+
+/* Media Queries for responsiveness */
+
+/* Tablet view (up to 1024px) */
+@media (max-width: 1024px) {
+    .college-card {
+        width: calc(50% - 20px); /* 2 columns layout */
+    }
+}
+
+/* Mobile view (up to 768px) */
 @media (max-width: 768px) {
     .college-card {
-        width: 100%; /* Single column layout on small screens */
+        width: 100%; /* Single column layout */
     }
 
     .college-container {
         padding: 30px 15px;
     }
-}
 
-@media (max-width: 480px) {
     .college-card h4 {
         font-size: 1.1rem;
     }
 
     .college-card p {
-        font-size: 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .college-card .btn-view {
+        font-size: 1rem;
+        padding: 12px 24px;
     }
 }
 
-/* Footer Section */
-.footer-container {
-    background-color: #7e6d7e;
-    color: #f0f0f0;
-    padding: 50px 20px;
-    text-align: center;
+/* Extra small devices (up to 480px) */
+@media (max-width: 480px) {
+    .college-card h4 {
+        font-size: 1rem;
+    }
+
+    .college-card p {
+        font-size: 0.9rem;
+    }
+
+    .college-card .btn-view {
+        font-size: 1rem;
+        padding: 12px 24px;
+    }
 }
+
 
 .footer-section {
     margin-bottom: 30px;
