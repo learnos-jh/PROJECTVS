@@ -932,7 +932,7 @@ body {
 
 /* College Section */
 .college-container {
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     padding: 50px 20px;
     color: white;
 }
