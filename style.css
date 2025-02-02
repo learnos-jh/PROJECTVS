@@ -825,7 +825,6 @@ body {
     padding: 50px 20px;
     text-align: center;
     margin-top: 20px;
-
 }
 
 .latest-announcements .container {
@@ -838,11 +837,12 @@ body {
     margin-bottom: 20px;
     text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     position: relative;
+    color: #f8f8f8; /* Changed font color */
 }
 
 .latest-announcements h2 i {
     margin-right: 10px;
-    color: hsl(48, 100%, 67%);
+    color: #ffdd57; /* Color changed for the icon */
 }
 
 /* Announcement Wrapper */
@@ -861,6 +861,7 @@ body {
     width: calc(50% - 20px);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease;
+    color: #f0f0f0; /* Changed font color */
 }
 
 .announcement:hover {
@@ -889,16 +890,17 @@ body {
 .announcement ul li {
     font-size: 1rem;
     margin: 10px 0;
-    color: #f0f0f0;
+    color: #f0f0f0; /* Changed font color */
 }
 
 .announcement ul li strong {
-    color: #ffdd57;
+    color: #ffdd57; /* Strong text color */
 }
 
-.btn-view {
+/* Button moved to the bottom of the announcement */
+.announcement .btn-view {
     display: inline-block;
-    margin-top: 15px;
+    margin-top: 30px;
     padding: 10px 20px;
     background: #ffdd57;
     color: #2575fc;
@@ -906,13 +908,14 @@ body {
     font-weight: bold;
     border-radius: 5px;
     transition: background 0.3s ease;
+    text-align: center; /* Ensures button is centered */
 }
 
-.btn-view:hover {
+.announcement .btn-view:hover {
     background: #ff9900;
 }
 
-/* Responsive Design */
+/* Responsive Design for Latest Announcements */
 @media (max-width: 768px) {
     .announcement {
         width: 100%;
@@ -925,4 +928,116 @@ body {
     .announcement h3 {
         font-size: 1.5rem;
     }
+}
+
+/* College Section */
+.college-container {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    padding: 50px 20px;
+    color: white;
+}
+
+.college-container h3 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.college-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.college-card {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(33% - 20px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    color: #fff;  /* White text color */
+}
+
+.college-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);  /* Slightly brighter background on hover */
+}
+
+.college-card h4 {
+    font-size: 1.4rem;
+    color: #ffdd57;  /* Yellow color for the college name */
+}
+
+.college-card p {
+    font-size: 1rem;
+    color: #f0f0f0;  /* Light grey color for the description */
+}
+
+.btn-read-more {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 30px;
+    background: #ffdd57;
+    color: #2575fc;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-left: 50%;
+    transform: translateX(-50%); /* Center the button */
+}
+
+.btn-read-more:hover {
+    background: #ff9900;
+}
+
+
+/* Footer Section */
+.footer-container {
+    background-color: #7e6d7e;
+    color: #f0f0f0;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.footer-section {
+    margin-bottom: 30px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+    color: #ffdd57;
+}
+
+.footer-section p,
+.footer-section ul {
+    color: #f0f0f0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section .contact-info li,
+.footer-section .social-icons li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-section .social-icons li a {
+    font-size: 1.5rem;
+    color: #f0f0f0;
+    transition: color 0.3s ease;
+}
+
+.footer-section .social-icons li a:hover {
+    color: #ffdd57;
 }
