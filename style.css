@@ -242,30 +242,31 @@ main {
     margin-bottom: 15px;
   }
   
-  /* Styling for card title */
+ /* Styling for card title */
   .card h3 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
-    font-family: 'Creepster-Regular';
-    color: fuchsia;
+    font-family:'Times New Roman', Times, serif;
+    color: rgb(237, 50, 18);
   }
   
   /* Styling for card description */
   .card p {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    font-family: 'ArbutuSlab-Regular';
+    font-family:'Times New Roman', Times, serif;
+    color:darkslateblue;
   }
   
   /* Styling for card links */
   .card a {
     text-decoration: underline;
-    color: #255fde;
-    font-weight: 600;
+   
+    color: #0648f0;
+    font-weight: 800;
     font-family: 'Raygun-Regular';
-    font-size: 2.5rem;
+    font-size: 2.8rem;
   }
-  
   /* Hover shimmer effect */
   .card:hover::before {
     opacity: 2;
