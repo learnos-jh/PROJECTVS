@@ -993,7 +993,25 @@ body {
 .btn-read-more:hover {
     background: #ff9900;
 }
+@media (max-width: 768px) {
+    .college-card {
+        width: 100%; /* Single column layout on small screens */
+    }
 
+    .college-container {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .college-card h4 {
+        font-size: 1.1rem;
+    }
+
+    .college-card p {
+        font-size: 0.9rem;
+    }
+}
 
 /* Footer Section */
 .footer-container {
