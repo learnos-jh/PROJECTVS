@@ -180,106 +180,169 @@ nav.active {
       padding: 0;
     }
 
-    /* Main Content Area */
-    main {
-      margin-left: 250px; /* Add margin to body content to avoid overlap with sidebar */
-      padding: 20px;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .content-cards {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 50px;
-      margin-top: 30px;
-    }
-
-    .card {
-      width: 250px;
-      padding: 20px;
-      background: linear-gradient(145deg, #ffffff, #e6e6e6);
-      box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
-      border-radius: 15px;
-      position: relative;
-      overflow: hidden;
-      text-align: center;
-      cursor: pointer;
-        transition: transform .8s ease-in-out;
-    cursor: pointer;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2),
-    -5px -5px 10px rgba(0, 0,0, 0.05);
+    
+   /* Main Content Area */
+main {
+    margin-left: 250px; /* Add margin to body content to avoid overlap with sidebar */
+    padding: 20px;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  /* Main container for course section */
+  .course-section {
+    padding: 50px 20px;
+    background-color: #f5ebeb;
+    text-align: center;
+  }
+  
+  h4 {
+    font-size: 2rem;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  /* Flex container for cards */
+  .content-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 50px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  /* Individual card styling */
+  .card {
+    width: 500px; /* Larger width for attractive look */
+    padding: 20px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    box-shadow: 10px 10px 20px #d1d1d1, -10px -10px 20px #ffffff;
     border-radius: 15px;
-    transform-style: preserve-3d;
-     
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    opacity: 0;
+    animation: slideIn 1s forwards;
+  }
+  
+  /* Hover effect for the card */
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 0px 20px 5px rgba(0, 123, 255, 0.6), inset 0px 0px 20px 5px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Adding image on top of each card */
+  .card img {
+    width: 100%;
+    height: 300px; /* Larger image height */
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  /* Styling for card title */
+  .card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    font-family: 'Creepster-Regular';
+    color: fuchsia;
+  }
+  
+  /* Styling for card description */
+  .card p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-family: 'ArbutuSlab-Regular';
+  }
+  
+  /* Styling for card links */
+  .card a {
+    text-decoration: underline;
+    color: #255fde;
+    font-weight: 600;
+    font-family: 'Raygun-Regular';
+    font-size: 1.5rem;
+  }
+  
+  /* Hover shimmer effect */
+  .card:hover::before {
+    opacity: 2;
+  }
+  
+  /* Slide-in animation for the cards */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(100%);
     }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0px 0px 20px 5px rgba(0, 123, 255, 0.6), inset 0px 0px 20px 5px rgba(0, 123, 255, 0.3);
-         background-image: url(gradient-international-day-education-background_23-2151120677.avif);
+    100% {
+      opacity: 1;
+      transform: translateX(0);
     }
-
-    .card h3 {
+  }
+  
+  /* Media Queries for Responsive Design */
+  @media (max-width: 768px) {
+    main {
+      margin-left: 0; /* Remove margin for smaller screens */
+      padding: 10px;
+    }
+  
+    /* Adjust grid for smaller screens */
+    .content-cards {
+      grid-template-columns: 1fr; /* 1 card per row */
+      gap: 20px;
+    }
+  
+    /* Reduce card size for mobile */
+    .card {
+      width: 100%; /* Make card full-width */
+      padding: 15px;
+    }
+  
+    /* Adjust font size of heading */
+    h4 {
       font-size: 1.5rem;
-      margin-bottom: 10px;
-      font-family: 'Creepster-Regular';
-      color: fuchsia;
     }
-
+  
+    /* Smaller card title font size */
+    .card h3 {
+      font-size: 1.4rem;
+    }
+  
+    /* Smaller card description font size */
     .card p {
       font-size: 1rem;
-      margin-bottom: 15px;
-      font-family: 'ArbutuSlab-Regular';
     }
-
+  
+    /* Adjust card link font size */
     .card a {
-      text-decoration: underline;
-      color: #0066cc;
-      font-weight: 600;
-      font-family: 'Raygun-Regular';
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
-
-    .card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(0, 123, 255, 0.4), rgba(255, 255, 255, 0));
-      animation: shimmer 5s infinite;
-      z-index: 0;
-      opacity: 0.7;
-      pointer-events: none;
+  }
+  
+  @media (max-width: 480px) {
+    /* Further adjustments for very small screens */
+    h4 {
+      font-size: 1.2rem;
     }
-
-    .card:hover::before {
-      opacity: 1;
+  
+    .card h3 {
+      font-size: 1.2rem;
     }
-
-    @keyframes shimmer {
-      0% {
-        transform: rotate(0deg);
-      }
-      100% {
-        transform: rotate(360deg);
-      }
+  
+    .card p {
+      font-size: 0.9rem;
     }
-
-    @keyframes slideIn {
-      0% {
-        opacity: 0;
-        transform: translateX(100%);
-      }
-      100% {
-        opacity: 1;
-        transform: translateX(0);
-      }
+  
+    .card a {
+      font-size: 1rem;
     }
-
+  }
+  
     /* Footer styles */
     footer {
       text-align: center;
