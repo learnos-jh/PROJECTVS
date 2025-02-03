@@ -242,11 +242,11 @@ main {
     margin-bottom: 15px;
   }
   
- /* Styling for card title */
+/* Styling for card title */
   .card h3 {
     font-size: 2.2rem;
     margin-bottom: 10px;
-    font-family:'Times New Roman', Times, serif;
+    font-family:arbutusSlab-Regular;
     color: rgb(237, 50, 18);
   }
   
@@ -254,19 +254,19 @@ main {
   .card p {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    font-family:'Times New Roman', Times, serif;
-    color:darkslateblue;
+    font-family: 'Times New Roman', Times, serif;
+    color:rgb(29, 24, 60);
   }
   
   /* Styling for card links */
   .card a {
     text-decoration: underline;
-   
     color: #0648f0;
     font-weight: 800;
-    font-family: 'Raygun-Regular';
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 2.8rem;
   }
+  
   /* Hover shimmer effect */
   .card:hover::before {
     opacity: 2;
