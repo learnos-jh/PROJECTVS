@@ -271,7 +271,20 @@ main {
   .card:hover::before {
     opacity: 2;
   }
-  
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #19abc4;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #4618ea;
+}
   /* Slide-in animation for the cards */
   @keyframes slideIn {
     0% {
