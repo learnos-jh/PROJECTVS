@@ -4,6 +4,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    max-width:100%;
+    box-sizing:border-box;
 }
 
 header {
@@ -178,6 +180,8 @@ nav.active {
       background-color: #f4f4f4;
       margin: 0;
       padding: 0;
+      overflow-x:hidden;
+      width:100%;
     }
 
    /* Main Content Area */
@@ -1090,4 +1094,14 @@ body {
 
 .footer-section .social-icons li a:hover {
     color: #ffdd57;
+}
+.container {
+    width:100%;
+    padding:0 10px;
+}
+h1,h2,h3,p{
+    word-wrap:break-word;
+}
+.navbar,.header{
+    width:100%;
 }
