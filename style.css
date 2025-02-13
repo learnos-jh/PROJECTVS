@@ -134,7 +134,9 @@ nav ul li a {
 .main-content {
     padding: 20px;
 }
-
+.main-content,.content-container{
+    text-align: center;
+}
 /* Course Section */
 .course-section {
     padding: 50px 20px;
