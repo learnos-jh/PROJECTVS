@@ -328,7 +328,7 @@ footer {
 
 .footer-section {
     flex: 1 1 200px; /* Flex-grow and shrink */
-    min-width: 200px;
+    min-width: 270px;
     padding: 10px; /* Padding inside each section */
 }
 
